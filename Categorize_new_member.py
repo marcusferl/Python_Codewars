@@ -1,35 +1,20 @@
-"""The Western Suburbs Croquet Club has two categories of membership,
-Senior and Open. They would like your help with an application form that
-will tell prospective members which category they will be placed.
-To be a senior, a member must be at least 55 years old and have a handicap greater than 7.
-In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+import sys
+import math
+arr = [1,2,3,4]
+# Auto-generated code below aims at helping you parse
+# the standard input according to the problem statement.
 
-Input
-Input will consist of a list of pairs. Each pair contains information for a single potential member.
-Information consists of an integer for the person's age and an integer for the person's handicap.
+counter = 0
+result = 0
+for i in arr:
+    # t: a temperature expressed as an integer ranging from -273 to 5526
+    t = int(i)
+    while  len(arr) > counter:
+        if  int(arr[counter]) < t:
+            result = int(arr[counter])
+            counter = +1
+    
+# Write an answer using print
+# To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-Output
-Output will consist of a list of string values (in Haskell: Open or Senior)
-stating whether the respective member is to be placed in the senior or open category.
-
-Example
-input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
-output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]"""
-
-input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
-
-def open_or_senior(data):
-    output =[]
-    input_member = {'age' : 0, 'handicap' : 0}
-    for i in data:
-        input_member['age'] = i[0]
-        input_member['handicap'] = i[1]
-        if input_member['age'] >= 55 and input_member['handicap'] > 7:
-            output.append('Senior')
-        else:
-            output.append('Open')
-
-    return  output
-
-
-print(open_or_senior(input))
+print(result)
